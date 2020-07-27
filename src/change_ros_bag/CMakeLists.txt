@@ -9,6 +9,11 @@ find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs genmsg)
 ## Generate added messages and services
 generate_messages(DEPENDENCIES std_msgs)
 
+option(ACTUAL_HECTOR_PROVIDED_BAG "my Var" OFF)
+
+if(${ACTUAL_HECTOR_PROVIDED_BAG})
+    add_definitions(-Dhector_bag=1)
+endif()
 ## Declare a catkin package
 catkin_package()
 
