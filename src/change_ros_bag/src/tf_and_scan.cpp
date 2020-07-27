@@ -24,7 +24,7 @@ void SubscribeAndPusblish ::sacn_call_back(const sensor_msgs::LaserScan::ConstPt
 {
     std::cout << "scan_call_back" << std::endl;
     sensor_msgs::LaserScan local_object = *msg;
-   /* local_object.header.seq = msg->header.seq;
+    local_object.header.seq = msg->header.seq;
     local_object.angle_min = 0.0;
     local_object.angle_max = 0.0;
     local_object.angle_increment = 0.0;
@@ -32,7 +32,7 @@ void SubscribeAndPusblish ::sacn_call_back(const sensor_msgs::LaserScan::ConstPt
     local_object.scan_time = 0.0;
     local_object.range_min = 0.0;
     local_object.range_max = 0.0;
-    local_object.ranges = {};
+    /* local_object.ranges = {};
     local_object.intensities = {};*/
     scan_pub.publish(local_object);
 }
